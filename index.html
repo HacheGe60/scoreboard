@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basketball Scoreboard</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="./src/css/styles.css">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+
+    <body>
+        <div class="container">
+
+            <!--Scoreboard-->
+            <div class="board">
+
+                <!--Home Team-->
+                <div class="team">
+                    <h3>home</h3>
+                    <div class="score inactiveBoard">
+                        <p class="inactiveColor" id="homeScore">000</p>
+                    </div>
+                    <div class="poss">
+                        <p><i id="homePoss"
+                                class="fa-solid fa-circle fa-sm border-lights inactiveColor boardBorder"></i>
+                            poss</p>
+                    </div>
+                    <div class="bonus">
+                        <p id="homeBonus"><i class="fa-solid fa-circle fa-sm border-lights inactiveColor boardBorder"
+                                id="homeBonus1"></i> <i
+                                class="fa-solid fa-circle fa-sm border-lights inactiveColor boardBorder"
+                                id="homeBonus2"></i> bonus
+                        </p>
+                    </div>
+                </div>
+
+                <!--Clock and Period-->
+                <div class="clockPeriod">
+                    <div class="timer inactiveColor boardBorder">
+                        <p id="time">00:00.0</p>
+                    </div>
+                    <div class="period">
+                        <span class="periodNumber inactiveColor boardBorder" id="periodNumber">0</span>
+                        <p>period</p>
+                    </div>
+                    <div class="logo">
+                        <img src="./src/images/baloncesto.png" alt="basketball">
+                    </div>
+                </div>
+
+                <!--Guest Team-->
+                <div class="team">
+                    <h3>guest</h3>
+                    <div class="score">
+                        <p class="inactiveColor" id="guestScore">000</p>
+                    </div>
+                    <div class="poss">
+                        <p>poss <i id="guestPoss"
+                                class="fa-solid fa-circle fa-sm border-lights inactiveColor boardBorder"></i></p>
+                    </div>
+                    <div class="bonus">
+                        <p id="guestBonus">bonus <i
+                                class="fa-solid fa-circle fa-sm border-lights inactiveColor boardBorder"
+                                id="guestBonus1"></i> <i
+                                class="fa-solid fa-circle fa-sm border-lights inactiveColor boardBorder"
+                                id="guestBonus2"></i></p>
+                    </div>
+                </div>
+            </div>
+
+            <!--Control Console-->
+            <div class="console">
+
+                <!--Time Controls-->
+                <div class="timeConsole">
+                    <p>time</p>
+                    <div class="timeBtns">
+                        <button id="startBtn" class="inactiveColor activeConsole"
+                            onclick="startClock(event)">start</button>
+                        <button class="inactiveColor" id="pauseBtn" onclick="pauseClock()">pause</button>
+                        <button class="inactiveColor" id="breakBtn" onclick="breakQuarter()">break</button>
+                    </div>
+                </div>
+                <div class="scoreConsole">
+                    <p>score</p>
+                    <div class="teamScoreConsole">
+                        <div class="scoreBtns">
+                            <p>home</p>
+                            <div class="homeScoreBtns" id="homeScoreBtns">
+                                <button class="inactiveColor" id="homeScoreBtn1"
+                                    onclick="changeScore('H', 1)">+1</button>
+                                <button class="inactiveColor" id="homeScoreBtn2"
+                                    onclick="changeScore('H', 2)">+2</button>
+                                <button class="inactiveColor" id="homeScoreBtn3"
+                                    onclick="changeScore('H', 3)">+3</button>
+                            </div>
+                        </div>
+                        <div class="scoreBtns">
+                            <p>guest</p>
+                            <div class="guestScoreBtns">
+                                <button class="inactiveColor" id="guestScoreBtn1"
+                                    onclick="changeScore('G', 1)">+1</button>
+                                <button class="inactiveColor" id="guestScoreBtn2"
+                                    onclick="changeScore('G', 2)">+2</button>
+                                <button class="inactiveColor" id="guestScoreBtn3"
+                                    onclick="changeScore('G', 3)">+3</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="possConsole">
+                    <p>poss</p>
+                    <div class="possBtns">
+                        <button id="homePossBtn" class="possBtn inactiveColor" onclick="changePoss('H')">H</button>
+                        <button id="changePossBtn" class="possBtn inactiveColor" onclick="changePoss('X')"><i
+                                class="fa-solid fa-arrow-right-arrow-left fa-sm"></i></button>
+                        <button id="guestPossBtn" class="possBtn inactiveColor" onclick="changePoss('G')">G</button>
+                    </div>
+                </div>
+                <div class="bonusConsole">
+                    <p>bonus</p>
+                    <div class="bonusBtns">
+
+                        <button class="inactiveColor" id="homeBonusBtn" onclick="changeBonus('H')">H</button>
+
+                        <button class="inactiveColor" id="guestBonusBtn" onclick="changeBonus('G')">G</button>
+
+                    </div>
+                </div>
+                <div class="newGame">
+                    <button id="newGameBtn" onclick="newGame()">new game</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="./src/js/main.js"></script>
+    </body>
+
+</html>

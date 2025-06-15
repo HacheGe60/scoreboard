@@ -1,0 +1,320 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+}
+
+.board {
+    display: flex;
+    justify-content: space-around;
+    width: 56rem;
+    background-color: #222222;
+    border-radius: 1rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    color: #f5f5f5;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.board .team h3 {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.board .team .score p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    border: 1px solid #4e4e4e66;
+    border-radius: 0.3rem;
+    margin: 1rem auto;
+    padding: 1rem 1rem 0.2rem;
+    font-family: 'Cursed Timer ULiL', sans-serif;
+    font-size: 5rem;
+    text-align: center;
+    letter-spacing: -.2rem
+}
+
+.board .team .poss,
+.board .team .bonus {
+    display: block;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.board .team:last-child .poss,
+.board .team:last-child .bonus {
+    text-align: right;
+}
+
+.board .clockPeriod {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.board .timer {
+    font-family: 'Cursed Timer ULiL', sans-serif;
+    border-radius: 0.3rem;
+    padding: 1rem 1rem 0.2rem;
+    font-size: 5rem;
+    text-align: center;
+    letter-spacing: -.2rem
+}
+
+.board .period {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.board .period .periodNumber {
+    align-items: center;
+    width: 5rem;
+    font-family: 'Cursed Timer ULiL', sans-serif;
+    border-radius: 0.3rem;
+    padding: 1rem 1rem 0.2rem;
+    font-size: 5rem;
+}
+
+.board .period p {
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+.board .logo img {
+    width: 100px;
+    margin-top: 1rem;
+}
+
+.console {
+    max-width: 20vw;
+    background-color: #757575;
+    border-radius: 0.3rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    color: #f5f5f5;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.console .timeConsole,
+.console .periodConsole,
+.console .scoreConsole,
+.console .possConsole,
+.bonusConsole {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.console .timeConsole p,
+.console .periodConsole p,
+.console .scoreConsole p,
+.console .bonusConsole p,
+.console .possConsole p {
+    color: #222222;
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.console .timeConsole .timeBtns,
+.console .periodConsole .periodBtns,
+.console .bonusConsole .bonusBtns,
+.console .possConsole .possBtns {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.console .scoreConsole .teamScoreConsole {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+    margin: 0.5rem 0;
+}
+
+.console .scoreConsole .teamScoreConsole .scoreBtns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1rem;
+}
+
+.console .timeConsole .timeBtns button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+    outline: none;
+}
+
+.console .scoreConsole .teamScoreConsole .homeScoreBtns button,
+.console .scoreConsole .teamScoreConsole .guestScoreBtns button,
+.console .possConsole .possBtns button,
+.console .bonusConsole .bonusBtns button {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50px;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+    outline: none;
+}
+
+.console .periodConsole .periodBtns button {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.console .timeConsole .timeBtns button:hover,
+.console .periodConsole .periodBtns button:hover,
+.console .scoreConsole .teamScoreConsole .homeScoreBtns button:hover,
+.console .scoreConsole .teamScoreConsole .guestScoreBtns button:hover,
+.console .possConsole .possBtn:hover,
+.console .bonusConsole .bonusBtns button:hover,
+.console .bonusConsole .bonusBtns button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.console .timeConsole .timeBtns button:active,
+.console .periodConsole .periodBtns button:active,
+.console .scoreConsole .teamScoreConsole .homeScoreBtns button:active,
+.console .scoreConsole .teamScoreConsole .guestScoreBtns button:active,
+.console .possConsole .possBtn:active,
+.console .bonusConsole .bonusBtns button:active,
+.console .bonusConsole .bonusBtns button:active {
+    background-color: #003d80;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+}
+
+.console .possConsole {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.console .possConsole p {
+    color: #222222;
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.console .possConsole button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+    outline: none;
+    margin: 0 auto;
+}
+
+.console .newGame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.console .newGame button {
+    width: 120px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #c00000;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+    outline: none;
+    margin: 0 auto;
+}
+
+.console .newGame button:hover {
+    background-color: #be0000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.console .newGame button:active {
+    background-color: #8e0000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+}
+
+.activeConsole {
+    color: #f5f5f5ed !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.activeBoard {
+    color: #cc0000 !important;
+    text-shadow: 1px 1px 2px #ff6363;
+}
+
+.inactiveColor {
+    color: #ff8a8a66;
+}
+
+.boardBorder {
+    border: 1px solid #4e4e4e66;
+    padding: 1rem 0.5rem;
+}
